@@ -6,6 +6,7 @@
 ATLAS_USERNAME="..."
 ATLAS_PASSWORD="..."
 3. Make sure to configure db/database.js to correctly connect to your database and collection
+4. Start the API by running "npm run start", or "npm run watch" to watch for changes during development
 
 ### Routes
 The following routes are available:
