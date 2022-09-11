@@ -11,5 +11,7 @@ ATLAS_PASSWORD="..."
 The following routes are available:
 
 GET /docs will return all documents in the database collection
+
 POST /docs will create a new document from the request body
+
 PUT /docs will update an existing documents title and body in the collection, filtered by ObjectId 
