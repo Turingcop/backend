@@ -21,10 +21,9 @@ jobs:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-      env:
-        ATLAS_USERNAME: ${{ secrets.ATLAS_USERNAME }}
-        ATLAS_PASSWORD: ${{ secrets.ATLAS_PASSWORD }}
     - run: npm install
     - run: npm test
+      with:
+          node-version: ${{ matrix.node-version }}
+          ATLAS_USERNAME: ${{ secrets.ATLAS_USERNAME }}
+          ATLAS_PASSWORD: ${{ secrets.ATLAS_PASSWORD }}
