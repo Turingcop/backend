@@ -5,10 +5,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cross-env 'NODE_OPTIONS=--experimental-loader @istanbuljs/esm-loader-hook' nyc --reporter=html --reporter=text --reporter=clover mocha --exit test/reports/*.test.js --timeout 10000",
     "start": "node app.js",
     "watch": "nodemon app.js",
-    "production": "NODE_ENV='production' node app.js"
+    "production": "NODE_ENV='production' node app.js",
+    "eslint": "eslint ."
   },
   "author": "simon",
   "license": "ISC",
@@ -20,6 +21,13 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "eslint": "^8.22.0"
+    "@istanbuljs/esm-loader-hook": "^0.2.0",
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "eslint": "^8.24.0",
+    "eslint-plugin-react": "^7.31.8",
+    "javascript-style-guide": "^1.0.1",
+    "mocha": "^10.0.0",
+    "nyc": "^15.1.0"
   }
 }
