@@ -28,4 +28,5 @@ jobs:
     - run: touch .env
     - run: echo ATLAS_PASSWORD=${{ secrets.ATLAS_PASSWORD }} >> .env
     - run: echo ATLAS_USERNAME=${{ secrets.ATLAS_USERNAME }} >> .env
+    - run: cat .env
     - run: npm test
