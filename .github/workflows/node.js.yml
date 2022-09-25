@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
+    max-parallel: 1
       matrix:
         node-version: [14.x, 16.x, 18.x]
 
@@ -22,6 +23,8 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        
+      env:
+        ATLAS_USERNAME: ${{ secrets.ATLAS_USERNAME }}
+        ATLAS_PASSWORD: ${{ secrets.ATLAS_PASSWORD }}
     - run: npm install
     - run: npm test
