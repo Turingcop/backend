@@ -3,6 +3,7 @@
 
 name: Node.js CI
 env:
+#try this out plz
   ATLAS_USERNAME: ${{ secrets.ATLAS_USERNAME }}
   ATLAS_PASSWORD: ${{ secrets.ATLAS_PASSWORD }}
 on:
