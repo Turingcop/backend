@@ -25,4 +25,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
+    - run: touch .env
+    - run: echo ATLAS_PASSWORD=${{ secrets.ATLAS_PASSWORD }} >> .env
+    - run: echo ATLAS_PASSWORD=${{ secrets.ATLAS_USERNAME }} >> .env
     - run: npm test
