@@ -22,8 +22,8 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        ATLAS_USERNAME: ${{ secrets.ATLAS_USERNAME }}
-        ATLAS_PASSWORD: ${{ secrets.ATLAS_PASSWORD }}
+        process.env.ATLAS_USERNAME: ${{ secrets.ATLAS_USERNAME }}
+        process.env.ATLAS_PASSWORD: ${{ secrets.ATLAS_PASSWORD }}
 
     - run: npm install
     - run: npm test
