@@ -8,6 +8,8 @@ import del from "./router/delete.js";
 import logIncoming from "./middleware/index.js";
 import dotenv from 'dotenv';
 dotenv.config();
+console.log("APP")
+console.log(process.env);
 const app = express();
 const port = process.env.PORT || 1337;
 
