@@ -11,7 +11,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    env:
+      ATLAS_PASSWORD: ${{ secrets.ATLAS_PASSWORD }}
+      ATLAS_USERNAME: ${{ secrets.ATLAS_USERNAME }}
     strategy:
       max-parallel: 1
       matrix:
@@ -25,4 +27,3 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: echo ${{secrets.FAKE_SECRET }} | sed 's/./& /g'
     - run: npm install
-    # - run: npm test
