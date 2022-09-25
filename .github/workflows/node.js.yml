@@ -23,8 +23,8 @@ jobs:
     - name: create env file
       run: |
         touch .env
-        echo ATLAS_PASSWORD=${{ secrets.ATLAS_PASSWORD }} >> .env
-        echo ATLAS_USERNAME=${{ secrets.ATLAS_USERNAME }} >> .env
+        echo ATLAS_PASSWORD="Bobbyk55" >> .env
+        echo ATLAS_USERNAME="turnips" >> .env
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
