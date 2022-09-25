@@ -3,8 +3,8 @@
 
 name: Node.js CI
 env:
-  ATLAS_USERNAME: {{ secret.ATLAS_USERNAME }}
-  ATLAS_PASSWORD: {{ secret.ATLAS_PASSWORD }}
+  ATLAS_USERNAME: ${{ secrets.ATLAS_USERNAME }}
+  ATLAS_PASSWORD: ${{ secrets.ATLAS_PASSWORD }}
 on:
   push:
     branches: [ "master" ]
