@@ -3,7 +3,7 @@ import { MongoClient, ServerApiVersion } from 'mongodb';
 import dotenv from 'dotenv';
 dotenv.config();
 const uri = `mongodb+srv://
-${process.env.ATLAS_USERNAME}:${process.env.ATLAS_PASSWORD}
+${process.env.ATLAS_USERNAME ?? "hej"}:${process.env.ATLAS_PASSWORD ?? "hej"}
 @cluster0.czazvrf.mongodb.net/?retryWrites=true&w=majority`;
 
 const database = {
