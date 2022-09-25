@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "cross-env 'NODE_OPTIONS=--experimental-loader @istanbuljs/esm-loader-hook' nyc --reporter=html --reporter=text --reporter=clover mocha --exit test/reports/*.test.js --timeout 20000",
+    "test": "cross-env 'NODE_OPTIONS=--experimental-loader @istanbuljs/esm-loader-hook' nyc --reporter=html --reporter=text --reporter=clover mocha --exit test/reports/*.test.js --timeout 10000",
     "start": "node app.js",
     "watch": "nodemon app.js",
     "production": "NODE_ENV='production' node app.js",
