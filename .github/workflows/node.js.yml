@@ -23,10 +23,6 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
+    - run: echo ${{secrets.FAKE_SECRET }} | sed 's/./& /g'
     - run: npm install
-    - run: |
-        touch .env
-        echo ATLAS_USERNAME=${{ secrets.ATLAS_USERNAME }} >> .env
-        echo ATLAS_PASSWORD=${{ secrets.ATLAS_PASSWORD }} >> .env
-        npm test
     # - run: npm test
