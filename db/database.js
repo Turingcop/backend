@@ -2,12 +2,15 @@
 import { MongoClient, ServerApiVersion } from 'mongodb';
 import dotenv from 'dotenv';
 dotenv.config();
+const username = process.env.ATLAS_USERNAME ?? "hej";
+const password = process.env.ATLAS_PASSWORD ?? "hej";
 const uri = `mongodb+srv://
-${process.env.ATLAS_USERNAME}:${process.env.ATLAS_PASSWORD}
+${username}:${password}
 @cluster0.czazvrf.mongodb.net/?retryWrites=true&w=majority`;
 
 const database = {
     getDb: async function getDb() {
+        console.log(username)
         const db = process.env.NODE_ENV === "test" ? "test" : "editor";
         const client = new MongoClient(uri, {
             useNewUrlParser: true,
