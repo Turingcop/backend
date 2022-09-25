@@ -8,7 +8,6 @@ ${process.env.ATLAS_USERNAME}:${process.env.ATLAS_PASSWORD}
 
 const database = {
     getDb: async function getDb() {
-        console.log(uri);
         const db = process.env.NODE_ENV === "test" ? "test" : "editor";
         const client = new MongoClient(uri, {
             useNewUrlParser: true,

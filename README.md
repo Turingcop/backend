@@ -1,3 +1,5 @@
+[![Node.js CI](https://github.com/Turingcop/backend/actions/workflows/node.js.yml/badge.svg)](https://github.com/Turingcop/backend/actions/workflows/node.js.yml)
+
 # MongoDb document API
 
 ### Installation
