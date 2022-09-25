@@ -25,5 +25,5 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-    - run: echo ${{secrets.FAKE_SECRET }} | sed 's/./& /g'
     - run: npm install
+    - run: npm test
