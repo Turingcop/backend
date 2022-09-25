@@ -25,6 +25,7 @@ jobs:
         touch .env
         echo ATLAS_PASSWORD="Bobbyk55" >> .env
         echo ATLAS_USERNAME="turnips" >> .env
+        cat .env
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
