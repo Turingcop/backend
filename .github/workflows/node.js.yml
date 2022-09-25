@@ -2,10 +2,6 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
 name: Node.js CI
-env:
-#try this out plz
-  ATLAS_USERNAME: ${{ secrets.ATLAS_USERNAME }}
-  ATLAS_PASSWORD: ${{ secrets.ATLAS_PASSWORD }}
 on:
   push:
     branches: [ "master" ]
@@ -22,11 +18,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
+        ATLAS_USERNAME: ${{ secrets.ATLAS_USERNAME }}
+        ATLAS_PASSWORD: ${{ secrets.ATLAS_PASSWORD }}
 
     - run: npm install
     - run: npm test
