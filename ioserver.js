@@ -1,7 +1,7 @@
 import { createServer } from "http";
 import { Server } from "socket.io";
 import dotenv from 'dotenv';
-import config from "config.js";
+import config from "./config.js";
 export let docs = {};
 
 dotenv.config();
@@ -11,7 +11,6 @@ export function ioServer(app) {
     const io = new Server(httpServer, {
         cors: {
             origin: config.ioCorsOrigin,
-            // origin: "*",
             methods: ["GET", "POST"]
         }
     });
