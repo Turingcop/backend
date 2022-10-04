@@ -1,12 +1,11 @@
 import express, { json } from "express";
 import morgan from 'morgan';
 import cors from 'cors';
-import get from "./router/get.js";
-import post from "./router/post.js";
-import put from "./router/put.js";
-import del from "./router/delete.js";
-import logIncoming from "./middleware/index.js";
 import dotenv from 'dotenv';
+import logIncoming from "./middleware/index.js";
+import router from "./router/router.js";
+import { ioServer } from "./ioserver.js";
+
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 1337;
@@ -21,7 +20,8 @@ app.use((req, res, next) => {
     logIncoming(req, res, next);
 });
 
-app.use("/", get, put, post, del);
+app.use("/", router);
+
 app.use((req, res, next) => {
     var err = new Error("Not Found");
 
@@ -29,6 +29,8 @@ app.use((req, res, next) => {
     next(err);
 });
 
-const server = app.listen(port, () => console.log(`Example API listening on port ${port}!`));
+const server = ioServer(app);
+
+server.listen(port);
 
 export default server;
