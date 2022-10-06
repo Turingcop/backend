@@ -9,7 +9,7 @@ router.post('/docs', async (req, res) => {
     const result = await db.collection.insertOne({ title: req.body.title, body: req.body.body })
         .then(db.client.close());
 
-    console.log(result)
+    console.log(result);
     return res.send(result);
 });
 
